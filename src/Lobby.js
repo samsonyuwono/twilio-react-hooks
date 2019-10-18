@@ -4,7 +4,7 @@ const Lobby = ({
   username,
   handleUsernameChange,
   roomName,
-  handleRoomChange,
+  handleRoomNameChange,
   handleSubmit
 }) => {
   return (

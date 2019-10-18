@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Lobby from "./Lobby";
 
 const VideoChat = () => {
@@ -11,7 +11,7 @@ const VideoChat = () => {
     setUsername(event.target.value);
   }, []);
 
-  const handleRoomChange = useCallback(event => {
+  const handleRoomNameChange = useCallback(event => {
     setRoomName(event.target.value);
   }, []);
 
