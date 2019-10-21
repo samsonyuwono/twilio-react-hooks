@@ -8,6 +8,7 @@ const VideoChat = () => {
   const [token, setToken] = useState(null);
 
   const handleUsernameChange = useCallback(event => {
+    console.log(event.target.value);
     setUsername(event.target.value);
   }, []);
 
@@ -40,9 +41,20 @@ const VideoChat = () => {
   }, []);
 
   let render;
+  console.log(token);
   if (token) {
     render = (
-      <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+      // <div>
+      //   <p>Username: {username}</p>
+      //   <p>Room name: {roomName}</p>
+      //   <p>Token: {token}</p>
+      // </div>
+      <Room
+        roomName={roomName}
+        userName={username}
+        token={token}
+        handleLogout={handleLogout}
+      />
     );
   } else {
     render = (

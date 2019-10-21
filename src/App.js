@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import VideoChat from "./VideoChat.js";
+import VideoChat from "./VideoChat";
 
 const App = () => {
   return (
@@ -15,12 +15,13 @@ const App = () => {
         <p>
           Made with{" "}
           <span role="img" aria-label="React">
-            ⚛
+            ⚛️
           </span>{" "}
-          by <a href="https://twitter.com/EssWhy91">EssWhy91</a>
+          by <a href="https://twitter.com/philnash">philnash</a>
         </p>
       </footer>
     </div>
   );
 };
+
 export default App;
