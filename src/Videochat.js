@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import Lobby from "./Lobby";
+import Room from "./Room";
 
 const VideoChat = () => {
   const [username, setUsername] = useState("");
@@ -7,7 +8,6 @@ const VideoChat = () => {
   const [token, setToken] = useState(null);
 
   const handleUsernameChange = useCallback(event => {
-    console.log(event.target.value);
     setUsername(event.target.value);
   }, []);
 
@@ -17,7 +17,7 @@ const VideoChat = () => {
 
   const handleSubmit = useCallback(
     async event => {
-      event.preventDeafult();
+      event.preventDefault();
 
       const data = await fetch("/video/token", {
         method: "POST",
@@ -42,11 +42,7 @@ const VideoChat = () => {
   let render;
   if (token) {
     render = (
-      <div>
-        <p>Username: {username}</p>
-        <p>Room name: {roomName}</p>
-        <p>Token: {token}</p>
-      </div>
+      <Room roomName={roomName} token={token} handleLogout={handleLogout} />
     );
   } else {
     render = (
